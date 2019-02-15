@@ -6,14 +6,17 @@ class TodoList extends Component {
     }
 
     render() {
+        const { addItem, inputElement, currentItem, handleInput } = this.props
+
         return (
             <div className="todoListMain">
                 <div className="header">
-                    <form onSubmit={this.props.addItem}>
+                    <form onSubmit={ addItem }>
                         <input
                             placeholder="Task"
-                            ref={this.props.currentItem.text}
-                            value={this.props.handleInput}
+                            ref={ inputElement }
+                            value={ currentItem.text }
+                            onChange={ handleInput }
                         />
                         <button type="submit"> Add Task</button>
                     </form>
